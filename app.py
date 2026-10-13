@@ -48,6 +48,15 @@ def get_number(prompt: str) -> float:
             print("Invalid input. Please enter a number.")
 
 
+def get_integer(prompt: str) -> int:
+    """Read a valid integer from the user."""
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            print("Invalid input. Please enter an integer.")
+
+
 def show_menu() -> None:
     """Display the application menu."""
     print("\n===== PYTHON MINI APP =====")
@@ -90,11 +99,11 @@ def main() -> None:
                     print("Error:", error)
 
         elif choice == "6":
-            number = int(get_number("Enter an integer: "))
+            number = get_integer("Enter an integer: ")
             print(f"{number} is {check_even_odd(number)}.")
 
         elif choice == "7":
-            number = int(get_number("Enter a number: "))
+            number = get_integer("Enter an integer: ")
             multiplication_table(number)
 
         elif choice == "8":
